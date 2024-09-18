@@ -37,7 +37,7 @@
       // today.getFullYear() prendiamol'anno corrente dalla variabile today.
       // today.getMonth() prendiamo il mese corrente (gennaio è 0, dicembre è 11).
       // today.getDate() prendiamo il giorno corrente del mese.
-      // daysUntilSaturday variabile inizializzata in precedenza 
+      // daysUntilSaturday variabile inizializzata in precedenza ...
       // Aggiungendo daysUntilSaturday a today.getDate(), si ottiene il giorno del mese che corrisponde al prossimo sabato.
       // Gli altri parametri 10, 30, 0 specificano rispettivamente l'ora (10), i minuti (30) e i secondi (0), cioè le 10:30:00.
       var nextSaturday = new Date(today.getFullYear(), today.getMonth(), today.getDate() + daysUntilSaturday, 10, 30, 0); 
@@ -54,6 +54,7 @@
     function timer() {
       // Get the current time
       var now = new Date().getTime();
+      
     
       // Find the distance between now and the countdown date
       var distance = countDownDate - now;
