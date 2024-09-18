@@ -22,44 +22,44 @@
     
     function getNextSaturday() {
       // Inizializza la data corrente 
-      var today = new Date();
+      let  today = new Date();
       // Calcola quanti giorni mancano prima di sabato 6=sabato in js dove get day da il giorno corrente 
-      var daysUntilSaturday =  6 - today.getDay(); 
+      let  daysUntilSaturday =  6 - today.getDay(); 
       if (daysUntilSaturday <= 0) {
         //If today is Saturday or later in the week, get the next Saturday
         daysUntilSaturday += 7;
       }
       // Inizializzo a prossimo sabato 
-      // today.getFullYear() prendiamol'anno corrente dalla variabile today.
+      // today.getFullYear() prendiamol'anno corrente dalla let iabile today.
       // today.getMonth() prendiamo il mese corrente (gennaio è 0, dicembre è 11).
       // today.getDate() prendiamo il giorno corrente del mese.
       // daysUntilSaturday variabile inizializzata in precedenza ...
       // Aggiungendo daysUntilSaturday a today.getDate(), si ottiene il giorno del mese che corrisponde al prossimo sabato.
       // Gli altri parametri 10, 30, 0 specificano rispettivamente l'ora (10), i minuti (30) e i secondi (0), cioè le 10:30:00.
-      var nextSaturday = new Date(today.getFullYear(), today.getMonth(), today.getDate() + daysUntilSaturday, 10, 30, 0); 
+      let nextSaturday = new Date(today.getFullYear(), today.getMonth(), today.getDate() + daysUntilSaturday, 10, 30, 0); 
       return nextSaturday.getTime();
     }
     
     
     // Set the date we're counting down to
-    var countDownDate = getNextSaturday();
+    let countDownDate = getNextSaturday();
     
     // Update the countdown every 1 second
-    var x = setInterval(timer, 1000);
+    let x = setInterval(timer, 1000);
     
     function timer() {
       //  Funzione che recupera la data e l'ora corrente come un timestamp in milli secondi 
-      var now = new Date().getTime();
+      let now = new Date().getTime();
       
     
       // Find the distance between now and the countdown date
-      var distance = countDownDate - now;
+      let distance = countDownDate - now;
     
       // Time calculations for days, hours, minutes, and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
       // Display the result in the respective elements
       document.getElementById("days").innerHTML = days;
