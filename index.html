@@ -17,11 +17,7 @@
     <p>Hours: <span id="hours">0</span></p>
     <p>Minutes: <span id="mins">0</span></p>
     <p>Seconds: <span id="seconds">0</span></p>
-  </div>
-  <div id="endpromo">
-    <p>The countdown has ended!</p>
-  </div>
-  
+  </div>  
   <script>
     
     function getNextSaturday() {
@@ -52,7 +48,7 @@
     var x = setInterval(timer, 1000);
     
     function timer() {
-      // Get the current time
+      //  Funzione che recupera la data e l'ora corrente come un timestamp in milli secondi 
       var now = new Date().getTime();
       
     
@@ -68,15 +64,15 @@
       // Display the result in the respective elements
       document.getElementById("days").innerHTML = days;
       document.getElementById("hours").innerHTML = hours;
-      document.getElementById("mins").innerHTML = minutes;
+      document.getElementById("mins").innerHTML = minutes;/*  */
       document.getElementById("seconds").innerHTML = seconds;
     
       // Controlla se il countdown è finito
-      if (distance <= 0) {
+      if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
         clearInterval(x);
         restartCountDown()
       }
-    }
+    } 
     // funzione per far ripartire il countdown
     function restartCountDown() {
       // Reimposta la data del prossimo sabato e riparte il timer
